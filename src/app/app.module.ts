@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
@@ -14,6 +14,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { CdkColumnDef } from '@angular/cdk/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { LoginComponent } from './auth/login/login.component';
+//import { AuthService } from './auth/auth.service';
 
 
 
@@ -21,7 +24,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   declarations: [
     AppComponent,
     PostCreateComponent,
-    PostListComponent
+    PostListComponent,
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,10 +37,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatInputModule,
     MatTableModule,
     MatIconModule,
-    MatToolbarModule
-    
-    
-    
+    MatToolbarModule,
+    HttpClientModule      
   ],
   providers: [PostService,CdkColumnDef],
   bootstrap: [AppComponent]

@@ -4,6 +4,9 @@ import { PostService } from '../post.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PostListComponent } from '../post-list/post-list.component';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   providers:[PostListComponent],
@@ -14,10 +17,11 @@ import { Observable } from 'rxjs';
 export class PostCreateComponent implements OnInit {
   post = new Post();
   EmpForm: FormGroup;
+  resdata;
+  newdata;
 
 
-
-  constructor(private postService: PostService, private fb: FormBuilder) {}
+  constructor(private postService: PostService, private fb: FormBuilder,private http:HttpClient) {}
 
   ngOnInit(): void {
        this.EmpForm = this.fb.group({  
@@ -31,6 +35,15 @@ export class PostCreateComponent implements OnInit {
               this.EmpForm.setValue(postData);
              }
   });
+
+  const url="http://54.198.226.103:4500/api/posts";
+  this.http.get(url).subscribe(res=>{
+  this.resdata=res;
+  this.newdata=this.resdata.posts;
+  console.log(JSON.stringify(this.newdata))
+  
+
+  })
         
   }
 
