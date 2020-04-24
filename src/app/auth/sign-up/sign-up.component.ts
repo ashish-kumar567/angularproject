@@ -1,44 +1,72 @@
-import { Component, OnInit } from '@angular/core';
-import { Users } from '../users';
+ import { Component, OnInit } from '@angular/core';
+ import { AuthModel } from '../auth-model'
 import { AuthService} from '../auth.service'
-import { LoginComponent} from '../login/login.component'
-@Component({
+import {Router} from '@angular/router'
+import { Observable,Subject, from } from 'rxjs';
+import {  LogoutComponent} from '../logout/logout.component'
+import { HttpClient } from '@angular/common/http';
+
+ @Component({
   selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css'],
-  providers:[LoginComponent]
-})
+ templateUrl: './sign-up.component.html',
+ styleUrls: ['./sign-up.component.css'],
+ })
 export class SignUpComponent implements OnInit {
-  //users=new Users();
-  model: any = {};
-  signupform: any;
- 
- 
-  constructor(private authservice: AuthService) { }
+  public status ;
 
+  constructor(private authService:AuthService,public router:Router,private httpclient:HttpClient) { }
+//public status ;
   ngOnInit(): void {
-  
-  //this.users=this.authservice.getsignupdata();
   }
-  
-  
-  
- onSubmit(signupform) {
+   
+ model = new AuthModel('','')
+  onSubmit(form){
+    debugger
 
-    //this.users=this.model;
-    console.log(JSON.stringify(signupform.value));
-    this.authservice.setsignupdata(signupform.value);
-    signupform.reset();
-     //this.resetForm();
-     alert('sign-up success!..');
+  //   if(this.authService.setsignupdata(form.value)){
+  //     alert("Sign Up success!")
+  //   }else{
+  //     alert("sign up error!")
+  //   }
+
+  //   form.reset()
+  //   this.router.navigate(['/login']);
+  // }
+
+this.authService.setsignupdata(form.value)
+.subscribe( 
+  response=>
+   alert("signup  success!"),
+   error =>
+    alert("signup success!")
+
     
+  );
+  form.reset();
+  this.router.navigate(['/login']);
+
   }
+}
+
+
+
+
+
   
 
-  /*resetForm() {
-    //this.users=new Users();
-    this.users.email="";
-    this.users.password="";
-   //this.users.setValue(this.users);
-  }*/ 
-}
+
+
+// onSubmit(form){
+//   this.response=this.authService.setsignupdata('email.value','password.value');
+//   this.response.subscribe((data)=>{
+//   this.status=data["message"];
+//   })
+//   alert(this.status)
+//   alert("sign-up success")
+//   form.reset();
+//   this.router.navigate(['/login']);
+
+// }
+
+
+

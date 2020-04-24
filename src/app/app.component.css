@@ -1,0 +1,35 @@
+
+.link{
+    text-align: center;
+    color: blue;
+
+    
+}
+
+a:link, a:visited {
+  background-color: blue;
+  color: white;
+  margin-top: 10px;
+  width: 70px;
+  height: 30px; 
+  padding-top: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+border-radius: 5px;
+}
+
+  
+  /* a:hover,a.active {
+    text-decoration: underline;
+    color: rgb(255, 30, 0);
+  } */
+  
+  body{
+     background-color: cornsilk;
+    background-size: cover;
+  /* position: relative; */
+     height: 650px;
+  
+
+  }

@@ -16,7 +16,14 @@ import { CdkColumnDef } from '@angular/cdk/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
-//import { AuthService } from './auth/auth.service';
+import { HeaderComponent } from './header/header.component';
+import { NewpostComponent } from './auth/newpost/newpost.component';
+// import { SignUpModule} from './auth/sign-up/sign-up.module';
+// import { LoginModule} from './auth/login/login.module';
+
+
+
+
 
 
 
@@ -26,7 +33,11 @@ import { LoginComponent } from './auth/login/login.component';
     PostCreateComponent,
     PostListComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    NewpostComponent,
+    //AlertComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -43,4 +54,8 @@ import { LoginComponent } from './auth/login/login.component';
   providers: [PostService,CdkColumnDef],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log('App module loaded')
+  }
+}

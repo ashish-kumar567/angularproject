@@ -1,38 +1,48 @@
 import { Injectable } from '@angular/core';
-import {  Users } from './users';
-
+import { AuthModel} from '../auth/auth-model'
+import {  Observable } from 'rxjs';
+import { HttpClient,HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { Config } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  authenticate(value: any) {
-    throw new Error("Method not implemented.");
-  }
-  users : any=[];
+  [x: string]: any;
+  
+  userArray = []
+  public enquiry = 1;
+  isLoggedIn=false;
+  
+  
+  
+  constructor(public httpclient:HttpClient,public router:Router){}
   
 
-  constructor() { }
 
-
-  setsignupdata(user) { //: Users
-    //alert(JSON.stringify(user));
-    debugger
-    this.users =this.users.concat(user);
-    this.users = user;
-    //alert(this.users.length)
+setsignupdata(value:AuthModel):Observable<HttpResponse<Config>>{
+   
+ const signupurl="http://54.198.226.103:4500/api/user/signup"
+ 
+  return this.httpclient.post<Config>(signupurl,value,{observe:'response'})
+  
+  
 }
 
-   getsignupdata(){
-     //alert("i am in getsignupdata")
-     debugger
-     alert(JSON.stringify(this.users))
-     return this.users;
-     //let authArray = this.users.filter(allCredentials => allCredentials.email == loginForm.email)
-     //alert(authArray[0])
-    
-   }
+  getsignupdata(value){
  
+    const loginurl="http://54.198.226.103:4500/api/user/login"
+    return this.httpclient.post<Config>(loginurl,value,{observe:'response'})   
+  }
 
+logoutuser(){
+
+  localStorage.removeItem('token');
+  this.router.navigate(['/login'])
+}
+getToken(){
+  return localStorage.getItem('token')
+}
 
 }

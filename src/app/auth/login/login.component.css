@@ -1,46 +1,40 @@
-
- 
-  
-  label {
+ label {
       display: inline-block;
       width: 70px;
       text-align: left;
       margin-top: 5px; 
   }
-  h3{
+   h3{
     text-align: center;
     color: blue;
+    padding-top: 12px;
   }
-#p,#r{
-  color: red;
-  text-align: center;
-}
-
-
-  input.ng-invalid.ng-touched{
+    input.ng-invalid.ng-touched{
     border-color: rgb(247, 31, 31);
-
+ 
   }
   
   .btn-primary{
-      color: darkcyan; 
-      border-radius: 2px;
-      margin-right: 100px; 
+    color: darkcyan;
+    border-radius: 2px;
+    margin-top: 20px;
   }
   .btn-primary:hover {
     background-color:rgb(14, 13, 12); 
   }
-  .form2{
+  .container{
     display:block;
-    border :2px solid rgb(243, 240, 239);
-    height: 260px;
+    border-radius: 10px;
+    height: 240px;
     width: 400px;
     text-align: center;
-    margin-top: 70px;
+    margin-top: 20px;
     margin-left: 550px;
     background-color: rgb(228, 231, 22);
     
   }
-  .help-bpx{
-    color: red;
-  }
+
+
+
+  
+ 

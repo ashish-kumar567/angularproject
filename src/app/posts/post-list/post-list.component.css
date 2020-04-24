@@ -1,15 +1,15 @@
 .mat-header-cell {
-    flex-direction: column;
-    justify-content: center;
+     flex-direction: column;
+     
     font-size: 15px;
     font-weight: bold;
-    height: 60px;
-    width: 110px;
+    /* height: 50px; */
+    width: 150px;
     background-color: rgb(193, 209, 12);
     color: cornsilk;
-    float: center;
+    text-align: center;
 
-   
+  
   }
   .mat-cell{
     font-size: 15px;
@@ -34,12 +34,25 @@
    border-radius: 2px;  
    width: 50px;
  }
+
+ .updatebtn{ 
+  text-decoration: none;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  color: darkcyan;
+  border-radius: 2px;  
+  width: 50px;
+}
  .editbtn:hover{
    background-color: rgb(8, 5, 5);
  }
  .deletetbtn:hover{
     background-color: rgb(8, 5, 7);
  }
+ .updatetbtn:hover{
+  background-color: rgb(8, 5, 7);
+}
  
 h2{
    text-align: center;
@@ -51,15 +64,17 @@ h2{
   }
  
   .form2 {
-   padding-top: 10px;
-   float: none;
-   margin-top: 2px;
-   margin-left: 480px;
-   margin-top: 70px;
-   background-color: rgb(209, 207, 198);
-   display: inline-block;
-   /* display:none; */
+    display: block;
+    background-color: rgb(241, 241, 238);
+    margin-top: 30px;
+    width: 600px;
+    margin-left: 450px;
 }
+  /* h2[_ngcontent-lvr-c94] {
+    text-align: center;
+    color: forestgreen;
+    display: table;
+} */
 
 
  

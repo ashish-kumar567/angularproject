@@ -1,0 +1,10 @@
+<h2 style="text-align: center;"> Home Page</h2>
+<div class="link">
+  
+    <p *ngIf="this.authservice.enquiry == 1"><a [routerLink]="['/sign-up']">sign-up</a> </p>
+    <p *ngIf="this.authservice.enquiry == 1"><a [routerLink]="['/login']">login</a></p> 
+    <p *ngIf="this.authservice.enquiry == 2"><a [routerLink]="['/login']">logout</a></p>
+    <p *ngIf="this.authservice.enquiry == 2"><a [routerLink]="['/newpost']">New Post</a> </p>
+  
+  <router-outlet></router-outlet>
+</div>

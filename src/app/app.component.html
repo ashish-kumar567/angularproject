@@ -1,9 +1,30 @@
+<!-- <tr>
+<td><app-post-create></app-post-create></td>
+<td><app-post-list></app-post-list><td>
+</tr>
 
-<!-- <app-post-create></app-post-create>
-<app-post-list></app-post-list>  -->
+<tr>
+ <td id="table1"><app-sign-up></app-sign-up></td>
+ <td id="table2"><app-login></app-login> </td>
+</tr> -->
+    <!-- <router-outlet></router-outlet> -->
 
+<!-- <app-header></app-header> -->
+<!-- <h2 style="text-align: center;" >  Home Page</h2>
+<div class="link">
 
+<a [routerLink]="['/sign-up']">sign-up</a>&nbsp;&nbsp;
+<a [routerLink]="['/login']">login</a>&nbsp;&nbsp;
+<a [routerLink]="['/logout']">logout</a>&nbsp;&nbsp;
+<a [routerLink]="['/post-create']">post-create</a>&nbsp;&nbsp;
+<a [routerLink]="['/post-list']">post-list</a>&nbsp;&nbsp; -->
+<body>
+<div class="link">
+    <a   [routerLink]="['/sign-up']" >sign-up</a>&nbsp;
+    <a   [routerLink]="['/login']">login</a>
+ 
+</div>  
+<app-header></app-header>
+<router-outlet></router-outlet>
 
- <app-sign-up></app-sign-up>
-  
-  <app-login></app-login> 
+</body>
